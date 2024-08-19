@@ -6,7 +6,7 @@ namespace TaskJunior2._5
     {
         static void Main(string[] args)
         {
-            const string CommandUserDataInput = "1";
+           const string CommandUserDataInput = "1";
             const string CommandUserDataOutput = "2";
             const string CommandDise = "3";
             const string CommandCleaningConsole = "4";
@@ -15,7 +15,7 @@ namespace TaskJunior2._5
             Random random = new Random();
             int firstValueRandom = 0;
             int finishValueRandom = 7;
-            int numberForRandom = random.Next(firstValueRandom, finishValueRandom);
+            int triesCountForDise;
 
             string feedbackForMansur;
             string userInput;
@@ -24,7 +24,6 @@ namespace TaskJunior2._5
             string workUser;
             int ageUser;
             int userInputForDise;
-            int triesCountForDise = 3;
             bool isWork = true;
 
             Console.WriteLine("Приветствую вас в самом не технологическом компьютере во всем мире!\n");
@@ -70,6 +69,9 @@ namespace TaskJunior2._5
 
                     case CommandDise:
                         
+                        int numberForRandom = random.Next(firstValueRandom, finishValueRandom);
+                        triesCountForDise = 3;
+
                         Console.WriteLine("Угадайте какое число выпадет в игральной кости.\n" +
                                          $"Что у вас за число? У вас {triesCountForDise} попытки отгадать.");
 
@@ -109,9 +111,7 @@ namespace TaskJunior2._5
                         break;
 
                 }
-
             }
-
         }
     }
 }
