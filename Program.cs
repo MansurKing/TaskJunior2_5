@@ -6,24 +6,25 @@ namespace TaskJunior2._5
     {
         static void Main(string[] args)
         {
-           const string CommandUserDataInput = "1";
+            const string CommandUserDataInput = "1";
             const string CommandUserDataOutput = "2";
             const string CommandDise = "3";
             const string CommandCleaningConsole = "4";
             const string CommandExitFromConsole = "5";
 
             Random random = new Random();
+            
             int firstValueRandom = 0;
             int finishValueRandom = 7;
             int triesCountForDise;
+            int ageUser;
+            int userInputForDise;
 
-            string feedbackForMansur;
             string userInput;
             string nameUser;
             string zodiacSign;
             string workUser;
-            int ageUser;
-            int userInputForDise;
+
             bool isWork = true;
 
             Console.WriteLine("Приветствую вас в самом не технологическом компьютере во всем мире!\n");
@@ -63,7 +64,8 @@ namespace TaskJunior2._5
 
                         Console.WriteLine("Меня зовут Мансур мне 20 годиков, обучаюсь в ЯЮниор и надеюсь после успешного обученя зарабатывать, конечно же ни сразу, но со временнем 10000000000$ в месяц)))" +
                                           "\nНапишите небольшой отзыв о программе, пожалуйста)");
-                        feedbackForMansur = Console.ReadLine();
+                        Console.ReadLine();
+
                         Console.WriteLine("Спасибо за отзыв!\n");
                         break;
 
@@ -75,25 +77,27 @@ namespace TaskJunior2._5
                         Console.WriteLine("Угадайте какое число выпадет в игральной кости.\n" +
                                          $"Что у вас за число? У вас {triesCountForDise} попытки отгадать.");
 
-                        while(triesCountForDise-- > 0)
+                        for (int i = 0; i < triesCountForDise; ++i)
                         {
                             Console.Write("Введите число от 1 до 6: ");
                             userInputForDise = Convert.ToInt32(Console.ReadLine());
+
                             if (userInputForDise == numberForRandom)
                             {
                                 Console.WriteLine($"Вы правы, это было число {numberForRandom}.\n");
                                 break;
                             }
+
                             else
                             {
                                 Console.WriteLine("Не верно, попробуйте еще раз.\n");
                             }
                         }
 
-                        if (triesCountForDise < 0)
+                        if (triesCountForDise >= 0)
                         {
-                        Console.WriteLine($"Вы проиграли. Верным числом было {numberForRandom}.\n");
-                        } 
+                            Console.WriteLine($"Вы проиграли. Верным числом было {numberForRandom}.\n");
+                        }
                         break;
 
                     case CommandCleaningConsole:
@@ -115,3 +119,4 @@ namespace TaskJunior2._5
         }
     }
 }
+
